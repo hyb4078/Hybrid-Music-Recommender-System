@@ -7,7 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>track-stacking Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  
+
   <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>4.9</junit.version>
@@ -25,7 +25,7 @@
         <commons-codec.version>1.10</commons-codec.version>
         <aspectjweaver.version>1.8.10</aspectjweaver.version>
     </properties>
-  
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -33,7 +33,7 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    
+
     <!-- spring包 core、web、oxm、tx、jdbc、webmvc、aop、context、test -->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -148,7 +148,7 @@
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>jackson-mapper-asl</artifactId>
                 <version>${jackson.version}</version>
-            </dependency> 
+            </dependency>
 
 			<!-- <dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
@@ -160,7 +160,7 @@
 				<artifactId>jackson-databind</artifactId>
 				<version>2.4.3</version>
 			</dependency> -->
-            
+
             <!-- 上传组件包 -->
             <dependency>
                 <groupId>commons-fileupload</groupId>
@@ -204,9 +204,20 @@
 				<artifactId>javax.mail</artifactId>
 				<version>1.5.6</version>
 			</dependency>
-    
+
   </dependencies>
   <build>
-    <finalName>track-stacking</finalName>
+      <finalName>track-stacking</finalName>
+
+      <!-- 强制将 xml 文件打到war包中 -->
+      <resources>
+          <resource>
+              <directory>src/main/java</directory>
+              <includes>
+                  <include>**/*.xml</include>
+              </includes>
+              <filtering>false</filtering>
+          </resource>
+      </resources>
   </build>
 </project>
