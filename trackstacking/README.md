@@ -10,3 +10,4 @@
 6. Maven 3.5.4
 7. Git 2.18.0
 8. Windows 10 Pro
+9. Lombok 1.18.8(IntelliJ Lombok plugin)
