@@ -1,10 +1,8 @@
 package top.wangruns.trackstacking.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class Role {
     private int roleId;
     private String roleName;

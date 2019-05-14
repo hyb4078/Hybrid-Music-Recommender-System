@@ -1,11 +1,9 @@
 package top.wangruns.trackstacking.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import top.wangruns.trackstacking.utils.MD5Util;
 
-@Getter
-@Setter
+@Data
 public class User {
     private int userId;
     private String email;

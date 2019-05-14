@@ -1,11 +1,8 @@
 package top.wangruns.trackstacking.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 public class Collection {
     private int collectionId;
