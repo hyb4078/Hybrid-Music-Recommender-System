@@ -2,9 +2,10 @@
 
 ## Detail
 
-1. Spring
-2. SpringMVC
-3. Mybatis
+1. Spring 4.3.0.RELEASE
+2. SpringMVC 4.3.0.RELEASE
+3. Mybatis 3.2.8
+4. mybatis-spring 1.3.1
 
 ## Development Environment & Tools
 
