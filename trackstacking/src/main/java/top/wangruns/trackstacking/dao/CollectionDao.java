@@ -1,8 +1,8 @@
 package top.wangruns.trackstacking.dao;
 
-import java.util.List;
-
 import top.wangruns.trackstacking.model.Collection;
+
+import java.util.List;
 
 public interface CollectionDao {
 
@@ -20,7 +20,7 @@ public interface CollectionDao {
 	 * @param collectionId
 	 * 记录Id
 	 */
-	public void deleteById(int collectionId);
+	public void deleteById(Integer collectionId);
 
 	/**
 	 * 添加新记录

@@ -1,7 +1,10 @@
 package top.wangruns.trackstacking.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -16,6 +19,16 @@ public class Song {
     private String lyricAddress;
     private int trendingCoefficient;
     private boolean whetherCollected;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date createTime;
+
+    private Long creator;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date updateTime;
+
+    private Long updater;
 
     public Song(String songName, String songAddress) {
         this.songName = songName;

@@ -1,9 +1,9 @@
 package top.wangruns.trackstacking.dao;
 
-import java.util.List;
-
 import top.wangruns.trackstacking.model.Role;
 import top.wangruns.trackstacking.model.User;
+
+import java.util.List;
 
 public interface UserDao {
 
@@ -52,7 +52,7 @@ public interface UserDao {
 	 * 批量删除，根据数组里面的Id删除对应的用户
 	 * @param userIds
 	 */
-	public void deleteByIds(int[] userIds);
+	public void deleteByIds(Integer[] userIds);
 
 	/**
 	 * 根据用户Id查询当前用户的角色信息
@@ -61,7 +61,7 @@ public interface UserDao {
 	 * @return
 	 * 若没有，则返回null
 	 */
-	public Role selectRoleByUserId(int userId);
-	
+	public Role selectRoleByUserId(Integer userId);
+
 
 }

@@ -111,7 +111,7 @@ DROP TABLE IF EXISTS `monthRanking`;
 /*!50001 DROP VIEW IF EXISTS `monthRanking`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE VIEW `monthRanking` AS SELECT 
+/*!50001 CREATE VIEW `monthRanking` AS SELECT
  1 AS `songId`,
  1 AS `trendingCoefficient`*/;
 SET character_set_client = @saved_cs_client;
@@ -297,7 +297,7 @@ DROP TABLE IF EXISTS `trending`;
 /*!50001 DROP VIEW IF EXISTS `trending`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE VIEW `trending` AS SELECT 
+/*!50001 CREATE VIEW `trending` AS SELECT
  1 AS `songId`,
  1 AS `trendingCoefficient`*/;
 SET character_set_client = @saved_cs_client;
@@ -366,7 +366,7 @@ DROP TABLE IF EXISTS `weekRanking`;
 /*!50001 DROP VIEW IF EXISTS `weekRanking`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE VIEW `weekRanking` AS SELECT 
+/*!50001 CREATE VIEW `weekRanking` AS SELECT
  1 AS `songId`,
  1 AS `trendingCoefficient`*/;
 SET character_set_client = @saved_cs_client;

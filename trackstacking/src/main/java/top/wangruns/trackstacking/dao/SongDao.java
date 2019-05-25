@@ -1,8 +1,8 @@
 package top.wangruns.trackstacking.dao;
 
-import java.util.List;
-
 import top.wangruns.trackstacking.model.Song;
+
+import java.util.List;
 
 public interface SongDao {
 
@@ -18,20 +18,20 @@ public interface SongDao {
 	 * @param songId
 	 * @return
 	 */
-	Song selectSongById(int songId);
+	Song selectSongById(Integer songId);
 
 	/**
 	 * 查询歌曲的流行度，根据其Id
 	 * @param songId
 	 * @return
 	 */
-	int selectCoefficientById(int songId);
+	int selectCoefficientById(Integer songId);
 
 	/**
 	 * 批量删除，根据数组里面的Id删除对应的歌曲
-	 * @param userIds
+	 * @param songIds
 	 */
-	void deleteByIds(int[] songIds);
+	void deleteByIds(Integer[] songIds);
 
 	/***
 	 * 插入单纯的歌曲(歌曲名称|歌曲地址)

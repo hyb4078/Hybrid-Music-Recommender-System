@@ -1,9 +1,9 @@
 package top.wangruns.trackstacking.dao;
 
-import java.util.List;
-
 import top.wangruns.trackstacking.model.Like;
 import top.wangruns.trackstacking.model.Review;
+
+import java.util.List;
 
 public interface ReviewDao {
 
@@ -32,7 +32,7 @@ public interface ReviewDao {
 	 * @return
 	 * 如果没有，返回null
 	 */
-	List<Review> selectHotReviewWithLikeNumber(int songId);
+	List<Review> selectHotReviewWithLikeNumber(Integer songId);
 
 	/**
 	 * 查询当前点在是否存在
@@ -53,7 +53,7 @@ public interface ReviewDao {
 	 * 删除点赞记录
 	 * @param likeId
 	 */
-	void deleteLikeRecordById(int likeId);
+	void deleteLikeRecordById(Integer likeId);
 
 	/**
 	 * 查询当前歌曲的带点赞数目的最新评论信息
@@ -62,12 +62,12 @@ public interface ReviewDao {
 	 * @return
 	 * 如果没有，返回null
 	 */
-	List<Review> selectNewReviewWithLikeNumber(int songId);
+	List<Review> selectNewReviewWithLikeNumber(Integer songId);
 
 	/**
 	 * 批量删除，根据数组里面的Id删除对应的评论
 	 * @param reviewIds
 	 */
-	void deleteByIds(int[] reviewIds);
+	void deleteByIds(Integer[] reviewIds);
 
 }

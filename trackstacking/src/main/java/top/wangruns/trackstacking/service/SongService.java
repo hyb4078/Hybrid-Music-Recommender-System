@@ -1,12 +1,10 @@
 package top.wangruns.trackstacking.service;
 
-import java.util.List;
+import org.springframework.web.multipart.MultipartFile;
+import top.wangruns.trackstacking.model.Song;
 
 import javax.servlet.http.HttpServletRequest;
-
-import org.springframework.web.multipart.MultipartFile;
-
-import top.wangruns.trackstacking.model.Song;
+import java.util.List;
 
 public interface SongService {
 
@@ -36,9 +34,9 @@ public interface SongService {
 	/**
 	 * 批量删除，根据数组里面的Id删除对应的歌曲
 	 * @param request
-	 * @param reviewIds
+	 * @param songIds
 	 */
-	public void batchDeleteById(HttpServletRequest request,int[] songIds);
+	public void batchDeleteById(HttpServletRequest request,Integer[] songIds);
 
 	/**
 	 * 检验歌曲文件，歌词文件的格式
@@ -53,7 +51,7 @@ public interface SongService {
 
 	/**
 	 * 添歌曲记录，根据上传的歌曲文件和歌词文件
-	 * @param request 
+	 * @param request
 	 * HttpServletRequest
 	 * @param song
 	 * MultipartFile 歌曲文件

@@ -1,10 +1,9 @@
 package top.wangruns.trackstacking.service;
 
-import java.util.List;
+import top.wangruns.trackstacking.model.Review;
 
 import javax.servlet.http.HttpServletRequest;
-
-import top.wangruns.trackstacking.model.Review;
+import java.util.List;
 
 public interface ReviewService {
 
@@ -58,6 +57,6 @@ public interface ReviewService {
 	 * 批量删除，根据数组里面的Id删除对应的评论
 	 * @param reviewIds
 	 */
-	void batchDeleteById(int[] reviewIds);
+	void batchDeleteById(Integer[] reviewIds);
 
 }

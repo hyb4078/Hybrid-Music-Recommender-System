@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Track Stacking</title>
+    <title>音乐推荐平台</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
@@ -107,13 +107,13 @@
 </head>
 <body>
 
-<!-- 登录Modal -->
+<!-- 登录 Modal -->
 <div class="modal fade" id="SignInModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">登录</h5>
+                <h2 class="modal-title" id="exampleModalCenterTitle">登录</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -122,41 +122,57 @@
 
                 <form class="form-signin" id="login-submit">
                     <!-- <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-                    <h1 class="h3 mb-3 font-weight-normal">请输入帐号和密码</h1>
-                    <label for="inputEmail" class="sr-only">Email address</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="邮箱帐号" required autofocus
-                           oninvalid="this.setCustomValidity('请输入正确的邮箱')"
-                           oninput="setCustomValidity('')">
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="密码" required
-                           oninvalid="this.setCustomValidity('密码不能为空')"
-                           oninput="setCustomValidity('')">
+                    <h4 class="mb-3 font-weight-normal">请输入帐号和密码</h4>
+                    <div class="form-group">
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="邮箱帐号" required autofocus
+                               oninvalid="this.setCustomValidity('请输入正确的邮箱')"
+                               oninput="setCustomValidity('')">
+                    </div>
 
+                    <div class="form-group">
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required
+                               oninvalid="this.setCustomValidity('密码不能为空')"
+                               oninput="setCustomValidity('')">
+                    </div>
                     <div class="collapse" id="collapse-error-hint">
                         <div class="card card-body">帐号或者密码错误</div>
                     </div>
 
-                    <div class="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" value="remember-me"> 记住我
-                        </label>
+                    <%--<div class="checkbox">--%>
+                    <%--<label>--%>
+                    <%--<input type="checkbox" value="remember-me"> 记住我--%>
+                    <%--</label>--%>
+                    <%--</div>--%>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" value="remember-me">
+                        <label class="custom-control-label" for="customCheck1">记住登录</label>
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+                    <%--<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>--%>
                     <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p> -->
                 </form>
 
             </div>
+
+            <div class="modal-footer" style="display: block">
+                <button type="submit" class="btn btn-lg btn-info btn-block">登录</button>
+                <button type="button" class="btn btn-lg btn-secondary btn-block" data-dismiss="modal"
+                        data-toggle="modal" data-target="#SignUpModalCenter"
+                        style="margin-left: 0">去注册
+                </button>
+            </div>
         </div>
     </div>
-</div><!-- 登录Modal End-->
+</div><!-- 登录 Modal End-->
 
-<!-- 注册Modal -->
+<!-- 注册 Modal -->
 <div class="modal fade" id="SignUpModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitleSignUp">注册</h5>
+                <h2 class="modal-title" id="exampleModalCenterTitleSignUp">注册</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -165,35 +181,58 @@
 
                 <form class="form-signin" id="register-submit">
                     <!-- <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-                    <h1 class="h3 mb-3 font-weight-normal">请输入帐号和密码</h1>
-                    <label for="inputEmail" class="sr-only">Email address</label>
-                    <input type="email" id="inputEmail-signup" class="form-control" placeholder="邮箱帐号" required
-                           autofocus oninvalid="this.setCustomValidity('请输入正确的邮箱')"
-                           oninput="setCustomValidity('')">
+                    <h4 class="mb-3 font-weight-normal">请填写注册所需要的信息</h4>
 
-                    <button type="button" class="btn btn-md btn-primary" id="get-validate-code">获取验证码</button>
-                    <input type="number" class="form-control" id="validate-code-signup" placeholder="验证码" required
-                           oninvalid="this.setCustomValidity('请输入验证码')"
-                           oninput="setCustomValidity('')">
+                    <div class="form-group">
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input type="email" id="inputEmail-signup" class="form-control" placeholder="邮箱帐号" required
+                               autofocus oninvalid="this.setCustomValidity('请输入正确的邮箱')"
+                               oninput="setCustomValidity('')">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input type="number" class="form-control" id="validate-code-signup" placeholder="验证码"
+                                       required
+                                       oninvalid="this.setCustomValidity('请输入验证码')"
+                                       oninput="setCustomValidity('')">
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <button type="button" class="btn btn-md btn-primary" id="get-validate-code">获取验证码
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword-signup" class="form-control" placeholder="密码" required
-                           oninvalid="this.setCustomValidity('密码不能为空')"
-                           oninput="setCustomValidity('')">
+                    <div class="form-group">
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" id="inputPassword-signup" class="form-control" placeholder="密码" required
+                               oninvalid="this.setCustomValidity('密码不能为空')"
+                               oninput="setCustomValidity('')">
+                    </div>
 
-                    <label for="inputPasswordAgain" class="sr-only">Password Again</label>
-                    <input type="password" id="inputPasswordAgain-signup" class="form-control" placeholder="再次输入密码"
-                           required oninvalid="this.setCustomValidity('密码不能为空')"
-                           oninput="setCustomValidity('')">
-
+                    <div class="form-group" style="margin-bottom: 0">
+                        <label for="inputPasswordAgain" class="sr-only">Password Again</label>
+                        <input type="password" id="inputPasswordAgain-signup" class="form-control" placeholder="确认密码"
+                               required oninvalid="this.setCustomValidity('密码不能为空')"
+                               oninput="setCustomValidity('')">
+                    </div>
                     <div class="collapse" id="collapse-error-hint-signup">
                         <div class="card card-body">两次密码不一致</div>
                     </div>
 
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+                    <%--<button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>--%>
                     <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p> -->
                 </form>
 
+            </div>
+
+            <div class="modal-footer" style="display: block">
+                <button type="submit" class="btn btn-lg btn-info btn-block">注册</button>
+                <button type="button" class="btn btn-lg btn-secondary btn-block" data-dismiss="modal"
+                        data-toggle="modal" data-target="#SignInModalCenter"
+                        style="margin-left: 0">去登录
+                </button>
             </div>
         </div>
     </div>
@@ -215,14 +254,17 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="first-slide" src="${pageContext.request.contextPath}/image/slide1.jpg" alt="First slide">
+                <%--<img class="first-slide" src="${pageContext.request.contextPath}/image/slide1.jpg" alt="First slide">--%>
+                <img class="first-slide" src="https://imgessl.kugou.com/commendpic/20190524/20190524211338599048.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="second-slide" src="${pageContext.request.contextPath}/image/slide2.jpg" alt="Second slide">
+                <%--<img class="second-slide" src="${pageContext.request.contextPath}/image/slide2.jpg" alt="Second slide">--%>
+                <img class="second-slide" src="https://imgessl.kugou.com/commendpic/20190524/20190524211644246823.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
-                <img class="third-slide" src="${pageContext.request.contextPath}/image/slide3.jpg" alt="Third slide">
-            </div>
+                <%--<img class="third-slide" src="${pageContext.request.contextPath}/image/slide3.jpg" alt="Third slide">--%>
+                <img class="third-slide" src="https://pic.xiami.net/images/common/uploadpic/5/1558331302705.jpg?x-oss-process=image/quality,q_80/crop,y_30,h_360" alt="Third slide">
+        </div>
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -329,8 +371,11 @@
 <!-- FOOTER -->
 <footer class="container">
     <p class="float-right"><a href="#">返回顶部</a></p>
-    <p>&copy; 2017-2018 WangRuns, School of Big Data & Software Engineering. &middot; <a
-            href="https://github.com/wangruns/Hybrid-Music-Recommender-System">后台管理登录</a></p>
+    <p>&copy; 2018-2019 Edgar Liu, School of Information Science and Engineering, Changzhou University, Computer Science
+        and Technology.
+        <%--&middot; --%>
+    </p>
+    <a href="https://github.com/wangruns/Hybrid-Music-Recommender-System">后台管理登录</a>
 </footer>
 
 

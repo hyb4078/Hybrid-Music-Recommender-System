@@ -1,13 +1,12 @@
 package top.wangruns.trackstacking.service;
 
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
 import top.wangruns.trackstacking.model.User;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+
 public interface UserService {
-	
+
 
 	/**
 	 * 根据帐号和密码查找用户
@@ -60,9 +59,9 @@ public interface UserService {
 
 	/**
 	 * 批量删除，根据数组里面的Id删除对应的用户
-	 * @param reviewIds
+	 * @param userIds
 	 */
-	public void batchDeleteById(int[] userIds);
+	public void batchDeleteById(Integer[] userIds);
 
 	/**
 	 * 简单限制minutes内只能操作一次

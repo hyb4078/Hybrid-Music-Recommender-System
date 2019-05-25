@@ -2,24 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="top.wangruns.trackstacking.dao.CollectionDao">
 
-	<insert id="insert"
-		parameterType="top.wangruns.trackstacking.model.Collection">
-		insert into collection(userId,songId) values(#{userId},#{songId})
-	</insert>
-	
-	<delete id="deleteById" parameterType="int">
-		delete from collection where collectionId=#{collectionId}
-	</delete>
-	
-	<select id="selectByCollection" parameterType="top.wangruns.trackstacking.model.Collection"
-		resultType="top.wangruns.trackstacking.model.Collection">
-		select * from collection where userId=#{userId} and songId=#{songId}
-	</select>
-	
-	<select id="selectAll"
-		resultType="top.wangruns.trackstacking.model.Collection">
-		select * from collection
-	</select>
-	
+    <insert id="insert"
+            parameterType="top.wangruns.trackstacking.model.Collection">
+        insert into collection(user_id,song_id) values(#{user_id},#{song_id})
+    </insert>
+
+    <delete id="deleteById" parameterType="int">
+        delete from collection where collection_id=#{collection_id}
+    </delete>
+
+    <select id="selectByCollection" parameterType="top.wangruns.trackstacking.model.Collection"
+            resultType="top.wangruns.trackstacking.model.Collection">
+        select * from collection where user_id=#{user_id} and song_id=#{song_id}
+    </select>
+
+    <select id="selectAll"
+            resultType="top.wangruns.trackstacking.model.Collection">
+        select * from collection
+    </select>
+
 
 </mapper>

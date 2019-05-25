@@ -1,18 +1,8 @@
 package top.wangruns.trackstacking.service.impl;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import top.wangruns.trackstacking.dao.SongDao;
 import top.wangruns.trackstacking.dao.TrendingRecDao;
 import top.wangruns.trackstacking.dao.UserDao;
@@ -21,6 +11,14 @@ import top.wangruns.trackstacking.model.Song;
 import top.wangruns.trackstacking.model.User;
 import top.wangruns.trackstacking.service.SongService;
 import top.wangruns.trackstacking.utils.Request;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service("songService")
 public class SongServiceImpl implements SongService{
@@ -60,11 +58,11 @@ public class SongServiceImpl implements SongService{
 				}
 			}
 		}
-		
+
 		return song;
 	}
 
-	public void batchDeleteById(HttpServletRequest request,int[] songIds) {
+	public void batchDeleteById(HttpServletRequest request,Integer[] songIds) {
 		if(songIds==null) {
 			return;
 		}
@@ -82,7 +80,7 @@ public class SongServiceImpl implements SongService{
 			}
 		}
 		songDao.deleteByIds(songIds);
-		
+
 	}
 
 	/**
@@ -90,7 +88,7 @@ public class SongServiceImpl implements SongService{
 	 * 由于时间关系，这里默认前端的验证是可靠的，虽然有时候这是一种危险的做法
 	 */
 	public boolean checkFormat(MultipartFile song, MultipartFile lyric) {
-		
+
 		return true;
 	}
 
@@ -116,7 +114,7 @@ public class SongServiceImpl implements SongService{
 			//保存歌词文件
 			saveFile(lyric,request.getServletContext().getRealPath(lyricAddress));
 		}
-		
+
 		if(affectedRows>0) {
 			isInsertSuccessful=true;
 		}
@@ -126,26 +124,26 @@ public class SongServiceImpl implements SongService{
 	private void saveFile(MultipartFile multipartFile, String realFilePath) {
 		try {
 			InputStream inputStream=multipartFile.getInputStream();
-			FileOutputStream fileOutputStream = new FileOutputStream(realFilePath);  
+			FileOutputStream fileOutputStream = new FileOutputStream(realFilePath);
 			try {
-				int b = 0;  
-	            while ((b = inputStream.read()) != -1) {  
-	            	fileOutputStream.write(b);  
-	            }  
+				int b = 0;
+	            while ((b = inputStream.read()) != -1) {
+	            	fileOutputStream.write(b);
+	            }
 			}finally{
-				inputStream.close();  
-	            fileOutputStream.close(); 
+				inputStream.close();
+	            fileOutputStream.close();
 			}
-			
+
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-		
+
 	}
 
 	public List<Song> getAllSongRecordsWithLyric() {
 		return songDao.selectAllSongsWithLyric();
-		
+
 	}
 
 }

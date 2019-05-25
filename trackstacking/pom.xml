@@ -1,5 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>top.wangruns</groupId>
     <artifactId>track-stacking</artifactId>
@@ -19,12 +20,14 @@
         <log4j.version>1.2.17</log4j.version>
         <fastjson.version>1.2.35</fastjson.version>
         <slf4j.version>1.7.25</slf4j.version>
-        <jackson.version>1.9.13</jackson.version>
         <commons-fileupload.version>1.3.3</commons-fileupload.version>
         <commons-io.version>2.5</commons-io.version>
         <commons-codec.version>1.10</commons-codec.version>
         <aspectjweaver.version>1.8.10</aspectjweaver.version>
+
         <lombok.v>1.18.8</lombok.v>
+        <jackson.version>1.9.13</jackson.version>
+        <jackson-databind.v>2.9.8</jackson-databind.v>
     </properties>
 
     <dependencies>
@@ -139,17 +142,18 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+
         <!-- json和bean之间相互转换 -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.codehaus.jackson</groupId>-->
+            <!--<artifactId>jackson-core-asl</artifactId>-->
+            <!--<version>${jackson.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.codehaus.jackson</groupId>-->
+            <!--<artifactId>jackson-mapper-asl</artifactId>-->
+            <!--<version>${jackson.version}</version>-->
+        <!--</dependency>-->
 
         <!-- <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
@@ -161,6 +165,14 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>2.4.3</version>
             </dependency> -->
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.v}</version>
+        </dependency>
+
 
         <!-- 上传组件包 -->
         <dependency>

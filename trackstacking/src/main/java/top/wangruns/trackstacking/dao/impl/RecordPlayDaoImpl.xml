@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="top.wangruns.trackstacking.dao.RecordPlayDao">
 
-	<insert id="insert"
-		parameterType="top.wangruns.trackstacking.model.PlayRecord">
-		insert into play(userId,songId) values(#{userId},#{songId})
-	</insert>
-	
-	<select id="selectAll"
-		resultType="top.wangruns.trackstacking.model.PlayRecord">
-		select * from play
-	</select>
+    <insert id="insert"
+            parameterType="top.wangruns.trackstacking.model.PlayRecord">
+        insert into play(user_id,song_id) values(#{user_id},#{song_id})
+    </insert>
+
+    <select id="selectAll"
+            resultType="top.wangruns.trackstacking.model.PlayRecord">
+        select * from play
+    </select>
 
 </mapper>
